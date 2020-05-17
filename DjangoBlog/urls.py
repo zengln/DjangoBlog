@@ -38,6 +38,8 @@ handler500 = 'blog.views.server_error_view'
 handle403 = 'blog.views.permission_denied_view'
 urlpatterns = [
     url(r'^admin/', admin_site.urls),
+    # include 跳转到 blog app 下的 urls
+    # namespace
     url(r'', include('blog.urls', namespace='blog')),
     url(r'mdeditor/', include('mdeditor.urls')),
     url(r'', include('comments.urls', namespace='comment')),
